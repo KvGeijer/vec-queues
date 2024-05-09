@@ -1,6 +1,5 @@
 mod queue_traits;
-mod unbounded_fifo;
+mod reallocating_queues;
 
-pub use queue_traits::
-FifoQueue;
-pub use unbounded_fifo::UnboundedFifo;
+pub use queue_traits::{Deque, FifoQueue};
+pub use reallocating_queues::{ReallocatingDeque, ReallocatingFifo};
