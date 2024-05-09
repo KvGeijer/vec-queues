@@ -1,0 +1,8 @@
+[package]
+name = "buf-queues"
+version = "0.1.0"
+authors = ["Kåre von Geijer <kare.kvg@gmail.com"]
+description = "A collection of queues, all built on top of arrays/buffers, focused on giving good performance."
+edition = "2021"
+
+[dependencies]
