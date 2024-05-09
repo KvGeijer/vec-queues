@@ -1,8 +1,11 @@
 [package]
-name = "buf-queues"
+name = "vec-queues"
 version = "0.1.0"
-authors = ["Kåre von Geijer <kare.kvg@gmail.com"]
-description = "A collection of queues, all built on top of arrays/buffers, focused on giving good performance."
 edition = "2021"
+authors = ["Kåre von Geijer <kare.kvg@gmail.com"]
+description = "A collection of queues, all built on top of vectors/arrays, focused on giving good performance."
+license = "MIT"
+repository = "https://github.com/kvgeijer/vec-queues"
+keywords = ["fifo", "queue", "deque"]
 
 [dependencies]
