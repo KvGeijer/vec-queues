@@ -42,11 +42,12 @@ impl<T: Sized + Clone> ReallocatingQueue<T> {
                 // TODO: By using unsafe, we could initialize the whole vector in the start, avoiding the distinction between push and insert as well
                 self.buffer.push(item.clone())
             }
+            self.head = self.dec_head();
         } else {
             // We don't have to worry about pushing, as the location is already filled
+            self.head = self.dec_head();
             self.buffer[self.head] = item;
         }
-        self.head = self.dec_head();
         self.size += 1;
     }
 
@@ -111,7 +112,7 @@ impl<T: Sized + Clone> ReallocatingQueue<T> {
     pub fn dequeue_last(&mut self) -> Option<T> {
         if self.size > 0 {
             self.tail = self.dec_tail();
-            let item = self.buffer[self.head].clone();
+            let item = self.buffer[self.tail].clone();
             self.size -= 1;
             Some(item)
         } else {
